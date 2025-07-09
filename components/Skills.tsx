@@ -21,6 +21,22 @@ const Skills = () => {
         { name: "Flutter", level: 95, color: "#10B981" },
         { name: "React", level: 80, color: "#3B82F6" },
       ]
+    },
+    {
+      category: "Backend & Database",
+      skills: [
+        { name: "Firebase", level: 90, color: "#10B981" },
+        { name: "Supabase", level: 85, color: "#3B82F6" },
+        { name: "Hive", level: 80, color: "#3B82F6" },
+        { name: "FastAPI", level: 75, color: "#F59E0B" },
+      ]
+    },
+    {
+      category: "State Management",
+      skills: [
+        { name: "Bloc", level: 90, color: "#10B981" },
+        { name: "Provider", level: 85, color: "#3B82F6" },
+      ]
     }
   ]
 
