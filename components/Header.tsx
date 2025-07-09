@@ -54,6 +54,17 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
+            {/* Download CV Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="mr-2"
+            >
+              <a href="/cv.pdf" download>
+                Download CV
+              </a>
+            </Button>
             {/* Theme Toggle */}
             <Button
               variant="ghost"

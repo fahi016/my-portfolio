@@ -8,7 +8,7 @@ import { MapPin, Calendar, GraduationCap } from 'lucide-react'
 const Education = () => {
   const coursework = [
     "Artificial Intelligence",
-    "Robotics", 
+    "Robotics",
     "Data Structures & Algorithms",
     "Database Management Systems",
     "Operating Systems",
@@ -35,11 +35,9 @@ const Education = () => {
                     <h3 className="text-2xl font-bold text-white mb-2">
                       Vellore Institute of Technology, Chennai
                     </h3>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
-                      Vellore Institute of Technology, Chennai
-                    </h3>
+
                     <p className="text-xl text-muted-foreground mb-4">BTech CSE (AI & Robotics)</p>
-                    
+
                     <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-6">
                       <div className="flex items-center space-x-2">
                         <Calendar className="h-4 w-4" />
