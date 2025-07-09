@@ -23,13 +23,13 @@ const Hero = () => {
 
           {/* Main Content */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
               MOHAMMED FAHEEM P
             </h1>
             <p className="text-2xl md:text-3xl text-gray-400 font-medium">
               App Developer
             </p>
-            <div className="flex items-center justify-center space-x-2 text-gray-400">
+            <div className="flex items-center justify-center space-x-2 text-muted-foreground">
               <MapPin className="h-5 w-5" />
               <span className="text-lg">Chennai, India</span>
             </div>
@@ -37,7 +37,7 @@ const Hero = () => {
 
           {/* Introduction */}
           <div className="max-w-3xl mx-auto">
-            <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Passionate Flutter developer and CS student specializing in AI & Robotics.
               Creating seamless mobile experiences with clean code and innovative
               solutions.
@@ -49,7 +49,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               onClick={() => scrollToSection('#projects')}
-              className="bg-white text-black hover:bg-gray-200 font-medium px-8 py-3"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-8 py-3"
             >
               View Projects
             </Button>
@@ -57,7 +57,7 @@ const Hero = () => {
               size="lg" 
               variant="outline"
               onClick={() => scrollToSection('#contact')}
-              className="border-gray-600 text-white hover:bg-gray-800 px-8 py-3"
+              className="px-8 py-3"
             >
               Contact Me
             </Button>
@@ -65,17 +65,17 @@ const Hero = () => {
 
           {/* Social Links */}
           <div className="flex justify-center space-x-6 pt-4">
-            <Button variant="ghost" size="icon" asChild className="text-gray-400 hover:text-white">
+            <Button variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-foreground">
               <a href="https://github.com/fahi016" target="_blank" rel="noopener noreferrer">
                 <Github className="h-6 w-6" />
               </a>
             </Button>
-            <Button variant="ghost" size="icon" asChild className="text-gray-400 hover:text-white">
+            <Button variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-foreground">
               <a href="https://linkedin.com/in/mohammed-faheem-p" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-6 w-6" />
               </a>
             </Button>
-            <Button variant="ghost" size="icon" asChild className="text-gray-400 hover:text-white">
+            <Button variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-foreground">
               <a href="mailto:faheempktl@gmail.com">
                 <Mail className="h-6 w-6" />
               </a>

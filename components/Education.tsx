@@ -19,7 +19,7 @@ const Education = () => {
     <section id="education" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Education</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Education</h2>
           <div className="w-16 h-1 bg-blue-500 mx-auto"></div>
         </div>
 
@@ -35,9 +35,12 @@ const Education = () => {
                     <h3 className="text-2xl font-bold text-white mb-2">
                       Vellore Institute of Technology, Chennai
                     </h3>
-                    <p className="text-xl text-gray-300 mb-4">BTech CSE (AI & Robotics)</p>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                      Vellore Institute of Technology, Chennai
+                    </h3>
+                    <p className="text-xl text-muted-foreground mb-4">BTech CSE (AI & Robotics)</p>
                     
-                    <div className="flex flex-wrap items-center gap-6 text-gray-400 mb-6">
+                    <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-6">
                       <div className="flex items-center space-x-2">
                         <Calendar className="h-4 w-4" />
                         <span>2023 - 2027</span>
@@ -53,20 +56,20 @@ const Education = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-xl font-semibold text-white mb-4">Relevant Coursework</h4>
+                    <h4 className="text-xl font-semibold text-foreground mb-4">Relevant Coursework</h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                       {coursework.map((course, index) => (
-                        <div key={index} className="flex items-center space-x-3 p-3 bg-gray-800/50 rounded-lg">
+                        <div key={index} className="flex items-center space-x-3 p-3 bg-muted/50 rounded-lg">
                           <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <span className="text-gray-300 text-sm">{course}</span>
+                          <span className="text-muted-foreground text-sm">{course}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="p-6 bg-gray-800/30 rounded-lg">
-                    <h4 className="text-lg font-semibold text-white mb-3">Specialization Focus</h4>
-                    <p className="text-gray-400 leading-relaxed">
+                  <div className="p-6 bg-muted/30 rounded-lg">
+                    <h4 className="text-lg font-semibold text-foreground mb-3">Specialization Focus</h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       My specialization in AI & Robotics combines cutting-edge artificial intelligence concepts with practical robotics
                       applications, preparing me for the future of technology and automation.
                     </p>

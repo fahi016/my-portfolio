@@ -37,7 +37,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <h1 className="text-xl font-bold text-white">MOHAMMED FAHEEM P</h1>
+            <h1 className="text-xl font-bold text-foreground">MOHAMMED FAHEEM P</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -46,7 +46,7 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.name}
               </button>
@@ -59,7 +59,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="text-gray-300 hover:text-white"
+              className="text-muted-foreground hover:text-foreground"
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
@@ -67,7 +67,7 @@ const Header = () => {
             {/* Mobile Menu */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden text-gray-300 hover:text-white">
+                <Button variant="ghost" size="icon" className="md:hidden text-muted-foreground hover:text-foreground">
                   <Menu className="h-4 w-4" />
                 </Button>
               </SheetTrigger>
@@ -77,7 +77,7 @@ const Header = () => {
                     <button
                       key={item.name}
                       onClick={() => scrollToSection(item.href)}
-                      className="text-left text-lg font-medium text-gray-300 hover:text-white transition-colors"
+                      className="text-left text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {item.name}
                     </button>

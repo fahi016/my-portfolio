@@ -44,7 +44,7 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Skills & Expertise</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Skills & Expertise</h2>
           <div className="w-16 h-1 bg-blue-500 mx-auto"></div>
         </div>
 
@@ -52,15 +52,15 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card key={index} className="bg-card border-border">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-8 text-white">{category.category}</h3>
+                <h3 className="text-2xl font-semibold mb-8 text-foreground">{category.category}</h3>
                 <div className="space-y-6">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex} className="space-y-3">
                       <div className="flex justify-between items-center">
-                        <span className="font-medium text-white text-lg">{skill.name}</span>
-                        <span className="text-gray-400 font-medium">{skill.level}%</span>
+                        <span className="font-medium text-foreground text-lg">{skill.name}</span>
+                        <span className="text-muted-foreground font-medium">{skill.level}%</span>
                       </div>
-                      <div className="w-full bg-gray-700 rounded-full h-3">
+                      <div className="w-full bg-muted rounded-full h-3">
                         <div 
                           className="h-3 rounded-full transition-all duration-1000 ease-out"
                           style={{ 

@@ -52,9 +52,9 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Get In Touch</h2>
           <div className="w-16 h-1 bg-blue-500 mx-auto mb-6"></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, collaborations, or just having
             a chat about technology and development.
           </p>
@@ -64,7 +64,7 @@ const Contact = () => {
           {/* Contact Information */}
           <Card className="bg-card border-border">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-semibold text-white mb-8">Contact Information</h3>
+              <h3 className="text-2xl font-semibold text-foreground mb-8">Contact Information</h3>
               
               <div className="space-y-6 mb-8">
                 <div className="flex items-center space-x-4">
@@ -72,10 +72,10 @@ const Contact = () => {
                     <Mail className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-white">Email</p>
+                    <p className="font-medium text-foreground">Email</p>
                     <a 
                       href="mailto:faheempktl@gmail.com"
-                      className="text-gray-400 hover:text-blue-400 transition-colors"
+                      className="text-muted-foreground hover:text-blue-400 transition-colors"
                     >
                       faheempktl@gmail.com
                     </a>
@@ -87,21 +87,21 @@ const Contact = () => {
                     <MapPin className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-white">Location</p>
-                    <p className="text-gray-400">Chennai, India</p>
+                    <p className="font-medium text-foreground">Location</p>
+                    <p className="text-muted-foreground">Chennai, India</p>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-4">Social Media</h4>
+                <h4 className="font-semibold text-foreground mb-4">Social Media</h4>
                 <div className="flex space-x-4">
-                  <Button variant="outline" size="icon" asChild className="border-gray-600 hover:bg-gray-800">
+                  <Button variant="outline" size="icon" asChild>
                     <a href="https://github.com/fahi016" target="_blank" rel="noopener noreferrer">
                       <Github className="h-5 w-5" />
                     </a>
                   </Button>
-                  <Button variant="outline" size="icon" asChild className="border-gray-600 hover:bg-gray-800">
+                  <Button variant="outline" size="icon" asChild>
                     <a href="https://linkedin.com/in/mohammed-faheem-p" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-5 w-5" />
                     </a>
@@ -114,23 +114,22 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="bg-card border-border">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-semibold text-white mb-8">Send Message</h3>
+              <h3 className="text-2xl font-semibold text-foreground mb-8">Send Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white">Name</Label>
+                    <Label htmlFor="name">Name</Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="bg-gray-800 border-gray-600 text-white"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white">Email</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -138,25 +137,23 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-gray-800 border-gray-600 text-white"
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-white">Subject</Label>
+                  <Label htmlFor="subject">Subject</Label>
                   <Input
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="bg-gray-800 border-gray-600 text-white"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-white">Message</Label>
+                  <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -164,13 +161,13 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="bg-gray-800 border-gray-600 text-white resize-none"
+                    className="resize-none"
                   />
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white" 
+                  className="w-full" 
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}

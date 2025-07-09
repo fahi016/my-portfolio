@@ -36,14 +36,14 @@ const About = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">About Me</h2>
           <div className="w-16 h-1 bg-blue-500 mx-auto"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           {/* Content */}
           <div className="space-y-6">
-            <div className="space-y-6 text-gray-300">
+            <div className="space-y-6 text-muted-foreground">
               <p className="text-lg leading-relaxed">
                 I'm a passionate Flutter developer and software engineer currently
                 pursuing BTech in Computer Science with specialization in AI &
@@ -73,8 +73,8 @@ const About = () => {
                     <div className={`${item.color}`}>
                       {item.icon}
                     </div>
-                    <h3 className="font-semibold text-white text-lg">{item.title}</h3>
-                    <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
+                    <h3 className="font-semibold text-foreground text-lg">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                   </div>
                 </CardContent>
               </Card>
