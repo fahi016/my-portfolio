@@ -21,7 +21,7 @@ const Footer = () => {
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-foreground">
-              <a href="https://linkedin.com/in/mohammed-faheem-p" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/mohammed-faheem-p-22546b289/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-4 w-4" />
               </a>
             </Button>

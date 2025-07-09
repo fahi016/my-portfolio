@@ -17,8 +17,12 @@ const Hero = () => {
       <div className="container mx-auto px-6 py-20">
         <div className="text-center space-y-8 max-w-4xl mx-auto">
           {/* Profile Image */}
-          <div className="relative mx-auto w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-2xl">
-            <span className="text-4xl font-bold text-white">MF</span>
+          <div className="relative mx-auto w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-2xl overflow-hidden">
+            <img
+              src="/my-photo.jpg" // Change this to your actual filename if different
+              alt="Mohammed Faheem P"
+              className="object-cover w-full h-full rounded-full"
+            />
           </div>
 
           {/* Main Content */}
@@ -46,15 +50,15 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               onClick={() => scrollToSection('#projects')}
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-8 py-3"
             >
               View Projects
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               onClick={() => scrollToSection('#contact')}
               className="px-8 py-3"
@@ -71,7 +75,7 @@ const Hero = () => {
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-foreground">
-              <a href="https://linkedin.com/in/mohammed-faheem-p" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/mohammed-faheem-p-22546b289/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-6 w-6" />
               </a>
             </Button>
