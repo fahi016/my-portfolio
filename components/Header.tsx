@@ -33,21 +33,20 @@ const Header = () => {
   if (!mounted) return null
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <h1 className="text-xl font-bold">MOHAMMED FAHEEM P</h1>
-            <span className="text-sm text-muted-foreground">App Developer</span>
+            <h1 className="text-xl font-bold text-white">MOHAMMED FAHEEM P</h1>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium hover:text-primary transition-colors"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
               >
                 {item.name}
               </button>
@@ -55,25 +54,12 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            {/* Social Links */}
-            <div className="hidden md:flex items-center space-x-2">
-              <Button variant="ghost" size="icon" asChild>
-                <a href="https://github.com/fahi016" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a href="https://linkedin.com/in/mohammed-faheem-p" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-
             {/* Theme Toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-gray-300 hover:text-white"
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
@@ -81,33 +67,21 @@ const Header = () => {
             {/* Mobile Menu */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
+                <Button variant="ghost" size="icon" className="md:hidden text-gray-300 hover:text-white">
                   <Menu className="h-4 w-4" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-card border-border">
                 <nav className="flex flex-col space-y-4 mt-6">
                   {navigation.map((item) => (
                     <button
                       key={item.name}
                       onClick={() => scrollToSection(item.href)}
-                      className="text-left text-lg font-medium hover:text-primary transition-colors"
+                      className="text-left text-lg font-medium text-gray-300 hover:text-white transition-colors"
                     >
                       {item.name}
                     </button>
                   ))}
-                  <div className="flex items-center space-x-4 mt-6">
-                    <Button variant="ghost" size="icon" asChild>
-                      <a href="https://github.com/fahi016" target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4" />
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="icon" asChild>
-                      <a href="https://linkedin.com/in/mohammed-faheem-p" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  </div>
                 </nav>
               </SheetContent>
             </Sheet>

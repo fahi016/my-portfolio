@@ -2,95 +2,63 @@
 
 import React from 'react'
 import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Progress } from '@/components/ui/progress'
 
 const Skills = () => {
   const skillCategories = [
     {
       category: "Programming Languages",
       skills: [
-        { name: "Dart", level: 90, color: "bg-blue-500" },
-        { name: "Java", level: 85, color: "bg-orange-500" },
-        { name: "Python", level: 80, color: "bg-yellow-500" },
-        { name: "C++", level: 75, color: "bg-purple-500" },
-        { name: "C", level: 70, color: "bg-gray-500" },
+        { name: "Dart", level: 90, color: "#10B981" },
+        { name: "Java", level: 85, color: "#3B82F6" },
+        { name: "Python", level: 80, color: "#3B82F6" },
+        { name: "C++", level: 75, color: "#F59E0B" },
+        { name: "C", level: 70, color: "#F59E0B" },
       ]
     },
     {
       category: "Frontend Development",
       skills: [
-        { name: "Flutter", level: 95, color: "bg-blue-400" },
-        { name: "React", level: 75, color: "bg-cyan-500" },
-        { name: "UI/UX Design", level: 80, color: "bg-pink-500" },
-      ]
-    },
-    {
-      category: "Backend & Database",
-      skills: [
-        { name: "Firebase", level: 90, color: "bg-orange-600" },
-        { name: "Supabase", level: 85, color: "bg-green-500" },
-        { name: "Hive", level: 80, color: "bg-amber-500" },
-        { name: "FastAPI", level: 75, color: "bg-teal-500" },
-      ]
-    },
-    {
-      category: "State Management",
-      skills: [
-        { name: "Bloc", level: 90, color: "bg-indigo-500" },
-        { name: "Provider", level: 85, color: "bg-violet-500" },
-        { name: "Riverpod", level: 70, color: "bg-rose-500" },
+        { name: "Flutter", level: 95, color: "#10B981" },
+        { name: "React", level: 80, color: "#3B82F6" },
       ]
     }
   ]
 
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency levels
-          </p>
+    <section id="skills" className="py-20 bg-background">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Skills & Expertise</h2>
+          <div className="w-16 h-1 bg-blue-500 mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6 text-center">{category.category}</h3>
-                <div className="space-y-4">
+            <Card key={index} className="bg-card border-border">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold mb-8 text-white">{category.category}</h3>
+                <div className="space-y-6">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
+                    <div key={skillIndex} className="space-y-3">
                       <div className="flex justify-between items-center">
-                        <span className="font-medium">{skill.name}</span>
-                        <Badge variant="outline" className="text-xs">
-                          {skill.level}%
-                        </Badge>
+                        <span className="font-medium text-white text-lg">{skill.name}</span>
+                        <span className="text-gray-400 font-medium">{skill.level}%</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
+                      <div className="w-full bg-gray-700 rounded-full h-3">
+                        <div 
+                          className="h-3 rounded-full transition-all duration-1000 ease-out"
+                          style={{ 
+                            width: `${skill.level}%`,
+                            backgroundColor: skill.color
+                          }}
+                        ></div>
+                      </div>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Quick Skills Overview */}
-        <div className="mt-12 text-center">
-          <h3 className="text-xl font-semibold mb-6">Technologies I Work With</h3>
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {[
-              "Flutter", "Dart", "Firebase", "Supabase", "Bloc", "Provider", "Hive",
-              "FastAPI", "Python", "Java", "C++", "React", "Git", "VS Code",
-              "Android Studio", "UI/UX", "REST APIs", "State Management"
-            ].map((tech, index) => (
-              <Badge key={index} variant="secondary" className="text-sm py-1 px-3 hover:bg-primary hover:text-primary-foreground transition-colors">
-                {tech}
-              </Badge>
-            ))}
-          </div>
         </div>
       </div>
     </section>

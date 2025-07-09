@@ -3,92 +3,73 @@
 import React from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { MapPin, Calendar, Award, BookOpen } from 'lucide-react'
+import { MapPin, Calendar, GraduationCap } from 'lucide-react'
 
 const Education = () => {
   const coursework = [
     "Artificial Intelligence",
-    "Robotics",
+    "Robotics", 
     "Data Structures & Algorithms",
     "Database Management Systems",
     "Operating Systems",
-    "Computer Networks",
-    "Machine Learning",
-    "Software Engineering"
+    "Computer Networks"
   ]
 
   return (
-    <section id="education" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            My academic journey and specialization in Computer Science with AI & Robotics
-          </p>
+    <section id="education" className="py-20 bg-background">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Education</h2>
+          <div className="w-16 h-1 bg-blue-500 mx-auto"></div>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+          <Card className="bg-card border-border">
             <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Main Education Info */}
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <BookOpen className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">BTech Computer Science</h3>
-                      <p className="text-lg text-muted-foreground">AI & Robotics Specialization</p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <MapPin className="h-4 w-4" />
-                      <span>Vellore Institute of Technology, Chennai</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      <span>2023 - 2027</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Award className="h-4 w-4 text-primary" />
-                      <span className="font-semibold">CGPA: 8.81/10</span>
-                    </div>
-                  </div>
-
-                  <div className="p-4 bg-muted/50 rounded-lg">
-                    <h4 className="font-semibold mb-2">Academic Excellence</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Maintaining a strong academic record while actively participating in projects and technical activities. Focus on practical application of theoretical concepts.
-                    </p>
-                  </div>
+              <div className="flex items-start space-x-6">
+                <div className="p-4 bg-blue-500 rounded-full">
+                  <GraduationCap className="h-8 w-8 text-white" />
                 </div>
-
-                {/* Coursework */}
-                <div className="space-y-6">
+                <div className="flex-1 space-y-6">
                   <div>
-                    <h4 className="text-xl font-semibold mb-4">Relevant Coursework</h4>
-                    <div className="grid grid-cols-1 gap-3">
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Vellore Institute of Technology, Chennai
+                    </h3>
+                    <p className="text-xl text-gray-300 mb-4">BTech CSE (AI & Robotics)</p>
+                    
+                    <div className="flex flex-wrap items-center gap-6 text-gray-400 mb-6">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="h-4 w-4" />
+                        <span>2023 - 2027</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <MapPin className="h-4 w-4" />
+                        <span>Chennai, India</span>
+                      </div>
+                      <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
+                        CGPA: 8.81/10
+                      </Badge>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-semibold text-white mb-4">Relevant Coursework</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                       {coursework.map((course, index) => (
-                        <div key={index} className="flex items-center space-x-3 p-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors">
-                          <div className="w-2 h-2 bg-primary rounded-full"></div>
-                          <span className="text-sm font-medium">{course}</span>
+                        <div key={index} className="flex items-center space-x-3 p-3 bg-gray-800/50 rounded-lg">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <span className="text-gray-300 text-sm">{course}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="space-y-3">
-                    <h4 className="text-lg font-semibold">Specialization Focus</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">Artificial Intelligence</Badge>
-                      <Badge variant="secondary">Robotics</Badge>
-                      <Badge variant="secondary">Machine Learning</Badge>
-                      <Badge variant="secondary">Computer Vision</Badge>
-                      <Badge variant="secondary">Deep Learning</Badge>
-                    </div>
+                  <div className="p-6 bg-gray-800/30 rounded-lg">
+                    <h4 className="text-lg font-semibold text-white mb-3">Specialization Focus</h4>
+                    <p className="text-gray-400 leading-relaxed">
+                      My specialization in AI & Robotics combines cutting-edge artificial intelligence concepts with practical robotics
+                      applications, preparing me for the future of technology and automation.
+                    </p>
                   </div>
                 </div>
               </div>
