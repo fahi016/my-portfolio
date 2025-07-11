@@ -27,21 +27,21 @@ const Projects = () => {
       gradient: "from-red-500 to-pink-500"
     },
     {
-      title: "Coffee App",
+      title: "Tea App",
       year: "2024",
-      description: "A beautiful coffee ordering app with Firebase authentication, real-time ordering system, and intuitive user interface for seamless coffee shopping experience.",
-      technologies: ["Flutter", "Firebase", "Authentication", "Real-time DB"],
-      github: "https://github.com/fahi016/coffee-app",
-      icon: <Database className="h-6 w-6" />,
+      description: "A simple Flutter app for managing and sharing tea preferences, with Firebase authentication and Firestore integration.",
+      technologies: ["Flutter", "Firebase", "Firestore", "Authentication"],
+      github: "https://github.com/fahi016/tea-app",
+      icon: <Database className="h-6 w-6" />, // You may want to change the icon if a more suitable one is available
       gradient: "from-amber-500 to-orange-500"
     },
     {
       title: "To-Do App",
       year: "2024",
-      description: "A productive task management app built with Flutter and Hive for local storage. Features include task categorization, priority levels, and offline functionality.",
-      technologies: ["Flutter", "Hive", "State Management", "Local Storage"],
-      github: "https://github.com/fahi016/todo-app",
-      icon: <Code className="h-6 w-6" />,
+      description: "A simple, beautiful, and responsive To-Do List app built with Flutter. Add, complete, and delete tasks with persistent storage using Hive.",
+      technologies: ["Flutter", "Hive", "Responsive Design", "Local Storage"],
+      github: "https://github.com/fahi016/to_do_app",
+      icon: <Code className="h-6 w-6" />, // Keeping the icon as is, but can be changed if needed
       gradient: "from-blue-500 to-purple-500"
     },
     {
