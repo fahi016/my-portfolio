@@ -8,24 +8,24 @@ const Skills = () => {
     {
       category: "Programming Languages",
       skills: [
-        { name: "Dart", level: 90, color: "#10B981" },
-        { name: "Java", level: 85, color: "#3B82F6" },
-        { name: "Python", level: 80, color: "#3B82F6" },
-        { name: "C++", level: 75, color: "#F59E0B" },
-        { name: "C", level: 70, color: "#F59E0B" },
+        { name: "Dart", level: 95, color: "#10B981" },
+        { name: "Java", level: 90, color: "#3B82F6" },
+        { name: "Python", level: 95, color: "#3B82F6" },
+        { name: "C++", level: 80, color: "#F59E0B" },
+        { name: "C", level: 85, color: "#F59E0B" },
       ]
     },
     {
       category: "Frontend Development",
       skills: [
         { name: "Flutter", level: 95, color: "#10B981" },
-        { name: "React", level: 80, color: "#3B82F6" },
+        { name: "React", level: 40, color: "#3B82F6" },
       ]
     },
     {
       category: "Backend & Database",
       skills: [
-        { name: "Firebase", level: 90, color: "#10B981" },
+        { name: "Firebase", level: 80, color: "#10B981" },
         { name: "Supabase", level: 85, color: "#3B82F6" },
         { name: "Hive", level: 80, color: "#3B82F6" },
         { name: "FastAPI", level: 75, color: "#F59E0B" },
@@ -61,9 +61,9 @@ const Skills = () => {
                         <span className="text-muted-foreground font-medium">{skill.level}%</span>
                       </div>
                       <div className="w-full bg-muted rounded-full h-3">
-                        <div 
+                        <div
                           className="h-3 rounded-full transition-all duration-1000 ease-out"
-                          style={{ 
+                          style={{
                             width: `${skill.level}%`,
                             backgroundColor: skill.color
                           }}

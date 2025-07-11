@@ -4,16 +4,25 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Github, ExternalLink, Smartphone, Code, Database, Brain, Globe } from 'lucide-react'
+import { Github, ExternalLink, Smartphone, Code, Database, Brain, Globe, Cloud } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Perplexity Clone",
+      year: "2024",
+      description: "AI-powered search and chat application clone with WebSocket integration, real-time messaging, and advanced AI integration for intelligent responses.",
+      technologies: ["Flutter", "WebSocket", "AI Integration", "Real-time"],
+      github: "https://github.com/fahi016/perplexity_clone",
+      icon: <Brain className="h-6 w-6" />,
+      gradient: "from-purple-500 to-indigo-500"
+    },
     {
       title: "Netflix Clone",
       year: "2024",
       description: "A complete Netflix clone built with Flutter featuring a responsive UI, movie browsing, and smooth animations. Implements modern design patterns with clean architecture.",
       technologies: ["Flutter", "Dart", "UI/UX", "Responsive Design"],
-      github: "https://github.com/fahi016/netflix-clone",
+      github: "https://github.com/fahi016/netflix_clone",
       icon: <Smartphone className="h-6 w-6" />,
       gradient: "from-red-500 to-pink-500"
     },
@@ -45,13 +54,13 @@ const Projects = () => {
       gradient: "from-green-500 to-teal-500"
     },
     {
-      title: "Perplexity Clone",
+      title: "Weather App",
       year: "2024",
-      description: "AI-powered search and chat application clone with WebSocket integration, real-time messaging, and advanced AI integration for intelligent responses.",
-      technologies: ["Flutter", "WebSocket", "AI Integration", "Real-time"],
-      github: "https://github.com/fahi016/perplexity_clone",
-      icon: <Brain className="h-6 w-6" />,
-      gradient: "from-purple-500 to-indigo-500"
+      description: "A sleek Flutter app showing real-time, location-based weather with dynamic UI, glassmorphism design, and OpenWeatherMap integration.",
+      technologies: ["Flutter", "OpenWeatherMap", "Animations", "Glassmorphism", "Real-time Data"],
+      github: "https://github.com/fahi016/weather_app",
+      icon: <Cloud className="h-6 w-6" />, // You may need to import Cloud from lucide-react
+      gradient: "from-cyan-500 to-blue-300"
     }
   ]
 
@@ -85,7 +94,7 @@ const Projects = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <Badge key={techIndex} variant="secondary" className="text-xs">
