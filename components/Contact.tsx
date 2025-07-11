@@ -16,6 +16,7 @@ const Contact = () => {
     subject: '',
     message: ''
   })
+  const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
 
@@ -27,25 +28,23 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for your message. I'll get back to you soon.",
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    // Netlify expects data as URL-encoded
+    const data = new URLSearchParams()
+    formData.forEach((value, key) => {
+      data.append(key, value as string)
     })
-
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data.toString(),
     })
     setIsSubmitting(false)
+    setSubmitted(true)
   }
 
   return (
@@ -115,60 +114,68 @@ const Contact = () => {
           <Card className="bg-card border-border">
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold text-foreground mb-8">Send Message</h3>
-
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className="space-y-6"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="bot-field" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                    />
-                  </div>
+              {submitted ? (
+                <div className="text-center py-8">
+                  <h4 className="text-xl font-bold mb-2">Thank you!</h4>
+                  <p>Your message has been sent successfully. I’ll get back to you soon.</p>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={6}
-                    className="resize-none"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full"
+              ) : (
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  className="space-y-6"
+                  onSubmit={handleSubmit}
                 >
-                  Send Message
-                </Button>
-              </form>
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="bot-field" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Name</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Subject</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={6}
+                      className="resize-none"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </form>
+              )}
             </CardContent>
           </Card>
         </div>
