@@ -10,7 +10,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Perplexity Clone",
-      year: "2024",
+      year: "2025",
       description: "AI-powered search and chat application clone with WebSocket integration, real-time messaging, and advanced AI integration for intelligent responses.",
       technologies: ["Flutter", "WebSocket", "AI Integration", "Real-time"],
       github: "https://github.com/fahi016/perplexity_clone",
@@ -19,12 +19,21 @@ const Projects = () => {
     },
     {
       title: "Netflix Clone",
-      year: "2024",
+      year: "2025",
       description: "A complete Netflix clone built with Flutter featuring a responsive UI, movie browsing, and smooth animations. Implements modern design patterns with clean architecture.",
       technologies: ["Flutter", "Dart", "UI/UX", "Responsive Design"],
       github: "https://github.com/fahi016/netflix_clone",
       icon: <Smartphone className="h-6 w-6" />,
       gradient: "from-red-500 to-pink-500"
+    },
+    {
+      title: "Travel Planner",
+      year: "2025",
+      description: "An intuitive travel planning application with beautiful UI/UX design, trip organization features, and local data persistence using Hive database.",
+      technologies: ["Flutter", "UI/UX", "Hive", "Trip Planning"],
+      github: "https://github.com/fahi016/travel-planner",
+      icon: <Globe className="h-6 w-6" />,
+      gradient: "from-green-500 to-teal-500"
     },
     {
       title: "Tea App",
@@ -43,15 +52,6 @@ const Projects = () => {
       github: "https://github.com/fahi016/to_do_app",
       icon: <Code className="h-6 w-6" />, // Keeping the icon as is, but can be changed if needed
       gradient: "from-blue-500 to-purple-500"
-    },
-    {
-      title: "Travel Planner",
-      year: "2024",
-      description: "An intuitive travel planning application with beautiful UI/UX design, trip organization features, and local data persistence using Hive database.",
-      technologies: ["Flutter", "UI/UX", "Hive", "Trip Planning"],
-      github: "https://github.com/fahi016/travel-planner",
-      icon: <Globe className="h-6 w-6" />,
-      gradient: "from-green-500 to-teal-500"
     },
     {
       title: "Weather App",
