@@ -65,7 +65,7 @@ const Contact = () => {
           <Card className="bg-card border-border">
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold text-foreground mb-8">Contact Information</h3>
-              
+
               <div className="space-y-6 mb-8">
                 <div className="flex items-center space-x-4">
                   <div className="p-3 bg-blue-500 rounded-full">
@@ -73,7 +73,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <a 
+                    <a
                       href="mailto:faheempktl@gmail.com"
                       className="text-muted-foreground hover:text-blue-400 transition-colors"
                     >
@@ -115,16 +115,22 @@ const Contact = () => {
           <Card className="bg-card border-border">
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold text-foreground mb-8">Send Message</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
+
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
                     <Input
                       id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
                       required
                     />
                   </div>
@@ -134,43 +140,33 @@ const Contact = () => {
                       id="email"
                       name="email"
                       type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
                       required
                     />
                   </div>
                 </div>
-                
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
                   <Input
                     id="subject"
                     name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
                     required
                   />
                 </div>
-                
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
                     required
                     rows={6}
                     className="resize-none"
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full" 
-                  disabled={isSubmitting}
+                <Button
+                  type="submit"
+                  className="w-full"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  Send Message
                 </Button>
               </form>
             </CardContent>
