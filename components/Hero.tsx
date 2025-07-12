@@ -30,7 +30,7 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
               MOHAMMED FAHEEM P
             </h1>
-            <p className="text-2xl md:text-3xl text-gray-400 font-medium">
+            <p className="text-2xl md:text-3xl text-muted-foreground font-medium">
               App Developer & AI Enthusiast
             </p>
             <div className="flex items-center justify-center space-x-2 text-muted-foreground">

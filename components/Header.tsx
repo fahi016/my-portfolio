@@ -40,17 +40,14 @@ const Header = () => {
             {/* Desktop Name - Hidden on mobile */}
             <h1 className="hidden md:block text-xl font-bold text-foreground">MOHAMMED FAHEEM P</h1>
 
-            {/* Mobile Download CV Button - Hidden on desktop */}
-            <Button
-              variant="outline"
-              size="sm"
-              asChild
-              className="md:hidden"
+            {/* Mobile Download CV Link - Hidden on desktop */}
+            <a
+              href="/cv.pdf"
+              download
+              className="md:hidden text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              <a href="/cv.pdf" download>
-                Download CV
-              </a>
-            </Button>
+              Download CV
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -67,17 +64,14 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            {/* Desktop Download CV Button - Hidden on mobile */}
-            <Button
-              variant="outline"
-              size="sm"
-              asChild
-              className="hidden md:block mr-2"
+            {/* Desktop Download CV Link - Hidden on mobile */}
+            <a
+              href="/cv.pdf"
+              download
+              className="hidden md:block mr-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              <a href="/cv.pdf" download>
-                Download CV
-              </a>
-            </Button>
+              Download CV
+            </a>
             {/* Theme Toggle */}
             <Button
               variant="ghost"
