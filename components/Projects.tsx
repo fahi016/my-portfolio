@@ -57,7 +57,7 @@ const Projects = () => {
       title: "Weather App",
       year: "2024",
       description: "A sleek Flutter app showing real-time, location-based weather with dynamic UI, glassmorphism design, and OpenWeatherMap integration.",
-      technologies: ["Flutter", "OpenWeatherMap", "Animations", "Glassmorphism", "Real-time Data"],
+      technologies: ["Flutter", "Animations", "Glassmorphism", "Real-time Data"],
       github: "https://github.com/fahi016/weather_app",
       icon: <Cloud className="h-6 w-6" />, // You may need to import Cloud from lucide-react
       gradient: "from-cyan-500 to-blue-300"
