@@ -42,9 +42,7 @@ const Hero = () => {
           {/* Introduction */}
           <div className="max-w-3xl mx-auto">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Passionate Flutter developer and CS student specializing in AI & Robotics.
-              Creating seamless mobile experiences with clean code and innovative
-              solutions.
+              Just a CS student trying to make apps that don’t crash and maybe teach machines to think (a little). Big fan of Flutter, clean-ish code, and figuring things out as I go.
             </p>
           </div>
 

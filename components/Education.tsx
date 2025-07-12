@@ -68,8 +68,7 @@ const Education = () => {
                   <div className="p-6 bg-muted/30 rounded-lg">
                     <h4 className="text-lg font-semibold text-foreground mb-3">Specialization Focus</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      My specialization in AI & Robotics combines cutting-edge artificial intelligence concepts with practical robotics
-                      applications, preparing me for the future of technology and automation.
+                      I’m specializing in AI & Robotics, blending smart algorithms with real-world robotics to gear up for the future of tech and automation.
                     </p>
                   </div>
                 </div>

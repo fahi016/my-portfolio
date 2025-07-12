@@ -45,21 +45,13 @@ const About = () => {
           <div className="space-y-6">
             <div className="space-y-6 text-muted-foreground">
               <p className="text-lg leading-relaxed">
-                I'm a passionate Flutter developer and software engineer currently
-                pursuing BTech in Computer Science with specialization in AI &
-                Robotics at Vellore Institute of Technology, Chennai.
+                I'm a Flutter developer and curious coder currently studying Computer Science with a focus on AI & Robotics at VIT Chennai. I enjoy turning caffeine and late-night ideas into mobile apps that (usually) work as expected.
               </p>
               <p className="text-lg leading-relaxed">
-                With a strong foundation in mobile app development and backend
-                technologies, I create seamless user experiences through clean
-                code and innovative solutions. My expertise spans across Flutter
-                development, Firebase integration, and modern state management
-                patterns.
+                I've got a solid grip on Flutter, Firebase, and modern state management,but I'm always poking around new tech stacks just to see what breaks (and how to fix it). Whether it's crafting smooth user interfaces or wiring up the backend, I aim to build stuff people actually enjoy using.
               </p>
               <p className="text-lg leading-relaxed">
-                I'm constantly learning and exploring new technologies while
-                maintaining a focus on delivering high-quality, user-centric
-                applications.
+                Still learning, still building, and always up for solving problems with a bit of code and a lot of trial and error.
               </p>
             </div>
           </div>
