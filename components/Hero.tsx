@@ -31,7 +31,7 @@ const Hero = () => {
               MOHAMMED FAHEEM P
             </h1>
             <p className="text-2xl md:text-3xl text-muted-foreground font-medium">
-              App Developer & AI Enthusiast
+              App Developer | AI in Progress
             </p>
             <div className="flex items-center justify-center space-x-2 text-muted-foreground">
               <MapPin className="h-5 w-5" />
