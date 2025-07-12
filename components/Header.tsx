@@ -5,10 +5,12 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { useTheme } from 'next-themes'
 import { Menu, Sun, Moon, Github, Linkedin, Mail } from 'lucide-react'
+import { useToast } from '@/hooks/use-toast'
 
 const Header = () => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const { toast } = useToast();
 
   useEffect(() => {
     setMounted(true)
@@ -45,6 +47,7 @@ const Header = () => {
               href="/cv.pdf"
               download
               className="md:hidden text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => toast({ title: 'CV downloaded successfully!' })}
             >
               Download CV
             </a>
@@ -69,6 +72,7 @@ const Header = () => {
               href="/cv.pdf"
               download
               className="hidden md:block mr-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => toast({ title: 'CV downloaded successfully!' })}
             >
               Download CV
             </a>
