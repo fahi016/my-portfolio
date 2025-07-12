@@ -37,7 +37,20 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <h1 className="text-xl font-bold text-foreground">MOHAMMED FAHEEM P</h1>
+            {/* Desktop Name - Hidden on mobile */}
+            <h1 className="hidden md:block text-xl font-bold text-foreground">MOHAMMED FAHEEM P</h1>
+
+            {/* Mobile Download CV Button - Hidden on desktop */}
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="md:hidden"
+            >
+              <a href="/cv.pdf" download>
+                Download CV
+              </a>
+            </Button>
           </div>
 
           {/* Desktop Navigation */}
@@ -54,12 +67,12 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            {/* Download CV Button */}
+            {/* Desktop Download CV Button - Hidden on mobile */}
             <Button
               variant="outline"
               size="sm"
               asChild
-              className="mr-2"
+              className="hidden md:block mr-2"
             >
               <a href="/cv.pdf" download>
                 Download CV
