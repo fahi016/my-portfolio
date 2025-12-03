@@ -14,6 +14,7 @@ const Projects = () => {
       description: "AI-powered search and chat application clone with WebSocket integration, real-time messaging, and advanced AI integration for intelligent responses.",
       technologies: ["Flutter", "WebSocket", "AI Integration", "Real-time"],
       github: "https://github.com/fahi016/perplexity_clone",
+      demo: "/perplexity%20final%20recording.mp4",
       icon: <Brain className="h-6 w-6" />,
       gradient: "from-purple-500 to-indigo-500"
     },
@@ -23,6 +24,7 @@ const Projects = () => {
       description: "A complete Netflix clone built with Flutter featuring a responsive UI, movie browsing, and smooth animations. Implements modern design patterns with clean architecture.",
       technologies: ["Flutter", "Dart", "UI/UX", "Responsive Design"],
       github: "https://github.com/fahi016/netflix_clone",
+      demo: "/netflix_clone.mp4",
       icon: <Smartphone className="h-6 w-6" />,
       gradient: "from-red-500 to-pink-500"
     },
@@ -32,6 +34,7 @@ const Projects = () => {
       description: "An intuitive travel planning application with beautiful UI/UX design, trip organization features, and local data persistence using Hive database.",
       technologies: ["Flutter", "UI/UX", "Hive", "Trip Planning"],
       github: "https://github.com/fahi016/travel-planner",
+      demo: "/travel_planner.mp4",
       icon: <Globe className="h-6 w-6" />,
       gradient: "from-green-500 to-teal-500"
     },
@@ -103,13 +106,20 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="pt-2">
-                  <Button variant="outline" size="sm" asChild className="w-full">
+                <div className="pt-2 flex gap-2">
+                  <Button variant="outline" size="sm" asChild className="flex-1">
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4 mr-2" />
                       Code
                     </a>
                   </Button>
+                  {project.demo && (
+                    <Button variant="default" size="sm" asChild className="flex-1">
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        Watch demo
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
