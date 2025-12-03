@@ -53,6 +53,7 @@ const Projects = () => {
       description: "A simple, beautiful, and responsive To-Do List app built with Flutter. Add, complete, and delete tasks with persistent storage using Hive.",
       technologies: ["Flutter", "Hive", "Responsive Design", "Local Storage"],
       github: "https://github.com/fahi016/to_do_app",
+      demo: "/to_do_app.mp4",
       icon: <Code className="h-6 w-6" />, // Keeping the icon as is, but can be changed if needed
       gradient: "from-blue-500 to-purple-500"
     },
@@ -62,6 +63,7 @@ const Projects = () => {
       description: "A sleek Flutter app showing real-time, location-based weather with dynamic UI, glassmorphism design, and OpenWeatherMap integration.",
       technologies: ["Flutter", "Animations", "Glassmorphism", "Real-time Data"],
       github: "https://github.com/fahi016/weather_app",
+      demo: "/weather_app.mp4",
       icon: <Cloud className="h-6 w-6" />, // You may need to import Cloud from lucide-react
       gradient: "from-cyan-500 to-blue-300"
     }
