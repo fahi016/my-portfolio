@@ -48,7 +48,7 @@ const Education = () => {
                         <span>Chennai, India</span>
                       </div>
                       <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
-                        CGPA: 8.81/10
+                        CGPA: 8.85/10
                       </Badge>
                     </div>
                   </div>

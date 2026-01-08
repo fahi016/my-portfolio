@@ -4,7 +4,7 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Github, ExternalLink, Smartphone, Code, Database, Brain, Globe, Cloud } from 'lucide-react'
+import { Github, ExternalLink, Smartphone, Code, Database, Brain, Globe, Cloud, Link } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
@@ -14,7 +14,6 @@ const Projects = () => {
       description: "AI-powered search and chat application clone with WebSocket integration, real-time messaging, and advanced AI integration for intelligent responses.",
       technologies: ["Flutter", "WebSocket", "AI Integration", "Real-time"],
       github: "https://github.com/fahi016/perplexity_clone",
-      demo: "/perplexity%20final%20recording.mp4",
       icon: <Brain className="h-6 w-6" />,
       gradient: "from-purple-500 to-indigo-500"
     },
@@ -24,7 +23,6 @@ const Projects = () => {
       description: "A complete Netflix clone built with Flutter featuring a responsive UI, movie browsing, and smooth animations. Implements modern design patterns with clean architecture.",
       technologies: ["Flutter", "Dart", "UI/UX", "Responsive Design"],
       github: "https://github.com/fahi016/netflix_clone",
-      demo: "/netflix_clone.mp4",
       icon: <Smartphone className="h-6 w-6" />,
       gradient: "from-red-500 to-pink-500"
     },
@@ -34,7 +32,6 @@ const Projects = () => {
       description: "An intuitive travel planning application with beautiful UI/UX design, trip organization features, and local data persistence using Hive database.",
       technologies: ["Flutter", "UI/UX", "Hive", "Trip Planning"],
       github: "https://github.com/fahi016/travel-planner",
-      demo: "/travel_planner.mp4",
       icon: <Globe className="h-6 w-6" />,
       gradient: "from-green-500 to-teal-500"
     },
@@ -53,7 +50,6 @@ const Projects = () => {
       description: "A simple, beautiful, and responsive To-Do List app built with Flutter. Add, complete, and delete tasks with persistent storage using Hive.",
       technologies: ["Flutter", "Hive", "Responsive Design", "Local Storage"],
       github: "https://github.com/fahi016/to_do_app",
-      demo: "/to_do_app.mp4",
       icon: <Code className="h-6 w-6" />, // Keeping the icon as is, but can be changed if needed
       gradient: "from-blue-500 to-purple-500"
     },
@@ -63,9 +59,18 @@ const Projects = () => {
       description: "A sleek Flutter app showing real-time, location-based weather with dynamic UI, glassmorphism design, and OpenWeatherMap integration.",
       technologies: ["Flutter", "Animations", "Glassmorphism", "Real-time Data"],
       github: "https://github.com/fahi016/weather_app",
-      demo: "/weather_app.mp4",
       icon: <Cloud className="h-6 w-6" />, // You may need to import Cloud from lucide-react
       gradient: "from-cyan-500 to-blue-300"
+    },
+    {
+      title: "Minilink",
+      year: "2025",
+      description: "A secure, scalable URL shortener application with JWT authentication, click analytics, and custom domain support. Built with Spring Boot backend and React frontend.",
+      technologies: ["Spring Boot", "React", "PostgreSQL", "JWT", "REST API"],
+      github: "https://github.com/fahi016/url-shortener-spring-boot",
+      visit: "https://whimsical-starburst-4524fe.netlify.app/dashboard",
+      icon: <Link className="h-6 w-6" />,
+      gradient: "from-indigo-500 to-purple-500"
     }
   ]
 
@@ -108,17 +113,18 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="pt-2 flex gap-2">
-                  <Button variant="outline" size="sm" asChild className="flex-1">
+                <div className="pt-2 space-y-2">
+                  <Button variant="outline" size="sm" asChild className="w-full">
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4 mr-2" />
                       Code
                     </a>
                   </Button>
-                  {project.demo && (
-                    <Button variant="default" size="sm" asChild className="flex-1">
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        Watch demo
+                  {project.visit && (
+                    <Button variant="outline" size="sm" asChild className="w-full">
+                      <a href={project.visit} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Visit
                       </a>
                     </Button>
                   )}
