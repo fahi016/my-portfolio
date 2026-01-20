@@ -1,158 +1,229 @@
 "use client"
 
-import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import React, { useEffect, useState } from 'react'
 import { Badge } from '@/components/ui/badge'
-import { Github, ExternalLink, Smartphone, Code, Database, Brain, Globe, Cloud, Link, Play } from 'lucide-react'
+import { Github, ExternalLink, Play, ArrowUpRight, Sparkles } from 'lucide-react'
 
 const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   const projects = [
     {
       title: "Minilink",
       year: "2025",
-      description: "A secure, scalable URL shortener application with JWT authentication, analytics, and fast redirection. Built with Spring Boot backend and React frontend.",
-      technologies: ["Spring Boot", "React", "PostgreSQL", "JWT", "REST API"],
+      image: "/mimilink.png",
+      description: "A URL shortener with a clean dashboard to manage, track, and share links.",
       github: "https://github.com/fahi016/url-shortener-spring-boot",
       visitUrl: "https://whimsical-starburst-4524fe.netlify.app/dashboard",
-      icon: <Link className="h-6 w-6" />,
-      gradient: "from-indigo-500 to-blue-500"
+      tech: "Spring Boot"
     },
     {
       title: "Perplexity Clone",
       year: "2025",
-      description: "AI-powered search and chat application clone with WebSocket integration, real-time messaging, and advanced AI integration for intelligent responses.",
-      technologies: ["Flutter", "WebSocket", "AI Integration", "Real-time"],
+      image: "/perplexity.jpg",
+      description: "A Perplexity-inspired UI built in Flutter with a chat-like search experience.",
       github: "https://github.com/fahi016/perplexity_clone",
       demoVideo: "/perplexity final recording.mp4",
-      icon: <Brain className="h-6 w-6" />,
-      gradient: "from-purple-500 to-indigo-500"
+      tech: "Flutter"
     },
     {
       title: "Netflix Clone",
       year: "2025",
-      description: "A complete Netflix clone built with Flutter featuring a responsive UI, movie browsing, and smooth animations. Implements modern design patterns with clean architecture.",
-      technologies: ["Flutter", "Dart", "UI/UX", "Responsive Design"],
+      bgColor: "bg-red-500",
+      image: "/netflix.jpg",
+      description: "A Netflix-style browsing experience with a polished Flutter UI and interactions.",
       github: "https://github.com/fahi016/netflix_clone",
       demoVideo: "/netflix_clone.mp4",
-      icon: <Smartphone className="h-6 w-6" />,
-      gradient: "from-red-500 to-pink-500"
+      tech: "Flutter"
     },
     {
       title: "Travel Planner",
       year: "2025",
-      description: "An intuitive travel planning application with beautiful UI/UX design, trip organization features, and local data persistence using Hive database.",
-      technologies: ["Flutter", "UI/UX", "Hive", "Trip Planning"],
+      bgColor: "bg-green-500",
+      image: "/travel.jpg",
+      description: "A travel planning app concept with trip cards, timelines, and smooth navigation.",
       github: "https://github.com/fahi016/travel-planner",
       demoVideo: "/travel_planner.mp4",
-      icon: <Globe className="h-6 w-6" />,
-      gradient: "from-green-500 to-teal-500"
+      tech: "Flutter"
     },
     {
       title: "Tea App",
       year: "2024",
-      description: "A simple Flutter app for managing and sharing tea preferences, with Firebase authentication and Firestore integration.",
-      technologies: ["Flutter", "Firebase", "Firestore", "Authentication"],
+      bgColor: "bg-amber-500",
+      image: "/tea.png",
+      description: "A product-style UI for browsing teas with modern cards and clean typography.",
       github: "https://github.com/fahi016/tea-app",
-      icon: <Database className="h-6 w-6" />, // You may want to change the icon if a more suitable one is available
-      gradient: "from-amber-500 to-orange-500"
+      tech: "Flutter"
     },
     {
       title: "To-Do App",
       year: "2024",
-      description: "A simple, beautiful, and responsive To-Do List app built with Flutter. Add, complete, and delete tasks with persistent storage using Hive.",
-      technologies: ["Flutter", "Hive", "Responsive Design", "Local Storage"],
+      bgColor: "bg-blue-500",
+      image: "/todo.png",
+      description: "A simple, fast to-do app with a minimal Flutter UI and smooth UX.",
       github: "https://github.com/fahi016/to_do_app",
       demoVideo: "/to_do_app.mp4",
-      icon: <Code className="h-6 w-6" />, // Keeping the icon as is, but can be changed if needed
-      gradient: "from-blue-500 to-purple-500"
+      tech: "Flutter"
     },
     {
       title: "Weather App",
       year: "2024",
-      description: "A sleek Flutter app showing real-time, location-based weather with dynamic UI, glassmorphism design, and OpenWeatherMap integration.",
-      technologies: ["Flutter", "Animations", "Glassmorphism", "Real-time Data"],
+      bgColor: "bg-cyan-500",
+      image: "/weather.jpg",
+      description: "A weather UI with clear states, clean layout, and modern styling in Flutter.",
       github: "https://github.com/fahi016/weather_app",
       demoVideo: "/weather_app.mp4",
-      icon: <Cloud className="h-6 w-6" />, // You may need to import Cloud from lucide-react
-      gradient: "from-cyan-500 to-blue-300"
+      tech: "Flutter"
     }
   ]
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my recent work and technical achievements in mobile app development
+    <section id="projects" className="relative py-32 bg-background overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+            <span className="text-sm font-medium text-primary">Portfolio</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground tracking-tight">
+            Featured
+            <br />
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light">
+            A curated selection of my best work
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="group border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <div className={`p-3 rounded-lg bg-gradient-to-r ${project.gradient} text-white`}>
-                    {project.icon}
+        {/* Projects Grid - Logo Style */}
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className={`flex flex-col ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
+                {/* Project Card */}
+                <div className="flip-card group relative aspect-square mb-3 z-0 hover:z-20 focus-within:z-20">
+                  <div className="flip-card-inner relative w-full h-full transition-transform duration-500 ease-out will-change-transform group-hover:[transform:translateY(-10px)_scale(1.12)_rotateY(180deg)] group-focus-within:[transform:translateY(-10px)_scale(1.12)_rotateY(180deg)]">
+                    {/* Front */}
+                    <div className="flip-card-face absolute inset-0 rounded-xl border border-border/50 bg-card/30 overflow-hidden transition-colors duration-300 group-hover:border-primary/50 group-focus-within:border-primary/50">
+                      {/* Background Image or Color */}
+                      {project.image ? (
+                        <div className="absolute inset-0 w-full h-full">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover opacity-90 group-hover:opacity-75 transition-opacity duration-300"
+                          />
+                        </div>
+                      ) : (
+                        <div className={`absolute inset-0 w-full h-full ${project.bgColor} opacity-30`} />
+                      )}
+
+                      {/* Subtle overlay (no text on the card front) */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/10 to-transparent" />
+                    </div>
+
+                    {/* Back */}
+                    <div className="flip-card-face absolute inset-0 rounded-xl border border-primary/40 bg-background/60 backdrop-blur-md overflow-hidden [transform:rotateY(180deg)]">
+                      <div className="h-full w-full p-4 flex flex-col">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="min-w-0">
+                            <div className="text-sm font-bold text-foreground truncate">{project.title}</div>
+                            <div className="text-xs text-muted-foreground">{project.tech} • {project.year}</div>
+                          </div>
+                        </div>
+
+                        <p className="text-xs text-muted-foreground mt-3 leading-relaxed line-clamp-5">
+                          {project.description}
+                        </p>
+
+                        <div className="mt-auto pt-4 flex gap-2 w-full">
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-card/90 backdrop-blur-sm border border-border/50 hover:border-primary/50 hover:bg-card transition-colors text-xs font-medium text-foreground"
+                          >
+                            <Github className="h-3.5 w-3.5" />
+                            Code
+                          </a>
+                          {project.visitUrl ? (
+                            <a
+                              href={project.visitUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-primary/20 backdrop-blur-sm border border-primary/50 hover:bg-primary/30 transition-colors text-xs font-medium text-primary"
+                            >
+                              <ExternalLink className="h-3.5 w-3.5" />
+                              Visit
+                            </a>
+                          ) : project.demoVideo ? (
+                            <a
+                              href={project.demoVideo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-primary/20 backdrop-blur-sm border border-primary/50 hover:bg-primary/30 transition-colors text-xs font-medium text-primary"
+                            >
+                              <Play className="h-3.5 w-3.5" />
+                              Demo
+                            </a>
+                          ) : null}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <Badge variant="outline" className="text-xs">
+                </div>
+
+                {/* Project Details Below Card */}
+                <div className="flex flex-col items-center">
+                  {/* Project Name */}
+                  <span className="text-sm font-semibold text-foreground text-center mb-2">
+                    {project.title}
+                  </span>
+
+                  {/* Year Badge */}
+                  <Badge
+                    variant="outline"
+                    className="text-xs font-medium border-border/50 mb-2"
+                  >
                     {project.year}
                   </Badge>
-                </div>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {project.description}
-                </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
+                  {/* Tech Stack */}
+                  <span className="text-xs text-muted-foreground text-center">
+                    {project.tech}
+                  </span>
                 </div>
-
-                <div className="pt-2 flex gap-2">
-                  <Button variant="outline" size="sm" asChild className="flex-1">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                  {project.visitUrl ? (
-                    <Button variant="outline" size="sm" asChild className="flex-1">
-                      <a href={project.visitUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Visit
-                      </a>
-                    </Button>
-                  ) : project.demoVideo ? (
-                    <Button variant="outline" size="sm" asChild className="flex-1">
-                      <a href={project.demoVideo} target="_blank" rel="noopener noreferrer">
-                        <Play className="h-4 w-4 mr-2" />
-                        Watch Demo
-                      </a>
-                    </Button>
-                  ) : null}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" asChild>
-            <a href="https://github.com/fahi016" target="_blank" rel="noopener noreferrer">
-              <Github className="h-5 w-5 mr-2" />
-              View All Projects on GitHub
-            </a>
-          </Button>
+        {/* CTA */}
+        <div className="text-center pt-4">
+          <a
+            href="https://github.com/fahi016"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm hover:bg-card transition-all duration-300 text-sm font-medium text-foreground hover:text-primary"
+          >
+            <Github className="h-4 w-4" />
+            View All Projects on GitHub
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
