@@ -73,7 +73,7 @@ const Hero = () => {
 
             <div className="space-y-4">
               <p className="text-2xl md:text-3xl lg:text-4xl text-foreground/90 font-light tracking-wide">
-                Spring Boot Backend Developer
+                Java Backend Developer
               </p>
               <div className="flex items-center justify-center gap-2 text-muted-foreground text-lg">
                 <span>REST APIs, JWT auth, and robust server-side systems</span>
