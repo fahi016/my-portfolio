@@ -17,7 +17,7 @@ const Projects = () => {
       year: "2025",
       image: "/lms.png",
       description: "Production-grade LMS backend with JWT authentication, role-based access (Admin/Teacher/Student), course management, enrollment, assignments, and grading. Features layered architecture with service-layer authorization and strict data isolation.",
-      github: "https://github.com/fahi016/url-shortener-spring-boot",
+      github: "https://github.com/fahi016/Learning-management-system",
       visitUrl: "https://faheempktl-3845713.postman.co/workspace/Spring-Boot-Projects~dfffb5fb-718f-4550-9659-bdc83cb24123/request/51081418-fe2d22b8-d99a-474d-905e-d6f6de6a0247?action=share&creator=51081418",
       tech: "Spring Boot"
     },
