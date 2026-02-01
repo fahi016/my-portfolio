@@ -13,6 +13,15 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "LMS - Spring Boot",
+      year: "2025",
+      image: "/lms.png",
+      description: "Production-grade LMS backend with JWT authentication, role-based access (Admin/Teacher/Student), course management, enrollment, assignments, and grading. Features layered architecture with service-layer authorization and strict data isolation.",
+      github: "https://github.com/fahi016/url-shortener-spring-boot",
+      visitUrl: "https://whimsical-starburst-4524fe.netlify.app/login",
+      tech: "Spring Boot"
+    },
+    {
       title: "Minilink",
       year: "2025",
       image: "/mimilink.png",
