@@ -27,7 +27,7 @@ const Projects = () => {
       image: "/mimilink.png",
       description: "A URL shortener with a clean dashboard to manage, track, and share links.",
       github: "https://github.com/fahi016/url-shortener-spring-boot",
-      visitUrl: "https://whimsical-starburst-4524fe.netlify.app/dashboard",
+      visitUrl: "https://faheempktl-3845713.postman.co/workspace/Spring-Boot-Projects~dfffb5fb-718f-4550-9659-bdc83cb24123/request/51081418-fe2d22b8-d99a-474d-905e-d6f6de6a0247?action=share&creator=51081418",
       tech: "Spring Boot"
     },
     {
