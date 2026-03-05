@@ -13,6 +13,15 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Real-Time Collaborative Board",
+      year: "2026",
+      image: "/coboard.png",
+      description: "Real-time collaborative whiteboard with live drawing and WebSockets.",
+      github: "https://github.com/fahi016/collaborative-board",
+      visitUrl: "https://coboardapp.netlify.app",
+      tech: "Spring Boot, WebSockets, WebRTC"
+    },
+    {
       title: "LMS - Spring Boot",
       year: "2025",
       image: "/lms.png",
